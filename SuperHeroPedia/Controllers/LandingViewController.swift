@@ -1,20 +1,17 @@
 //
-//  ViewController.swift
+//  LandingViewController.swift
 //  SuperHeroPedia
 //
 //  Created by IDS Comercial on 25/02/21.
 //  Copyright © 2021 Americo MQ. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class ViewController: UIViewController {
-
+class LandingViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
-
-
 }
-
