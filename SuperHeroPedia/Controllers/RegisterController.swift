@@ -21,6 +21,6 @@ class RegisterController: UIViewController {
     }
     
     @IBAction func registerButton(_ sender: UIButton) {
-        AlertView.instance.showAlert(title: "Este es el titulo", message: "Hola Mundo", alertType: .failure)
+//        AlertView.instance.showAlert(title: "Este es el titulo", message: "Hola Mundo", alertType: .failure)
     }
 }
