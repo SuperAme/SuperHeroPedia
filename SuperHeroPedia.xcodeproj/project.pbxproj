@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		480F03B10C6E93BADF7D375A /* Pods_SuperHeroPedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A74D642B724BD0AE4D912BB5 /* Pods_SuperHeroPedia.framework */; };
 		D65BF0E425EC34B300AFAAF2 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D65BF0E325EC34B300AFAAF2 /* AlertView.xib */; };
 		D65BF0EB25EC382A00AFAAF2 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65BF0EA25EC382A00AFAAF2 /* AlertView.swift */; };
 		D6EA927D25E8044B000928D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EA927C25E8044B000928D8 /* AppDelegate.swift */; };
@@ -20,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		050D62E022C0B9844C9C98C4 /* Pods-SuperHeroPedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperHeroPedia.release.xcconfig"; path = "Target Support Files/Pods-SuperHeroPedia/Pods-SuperHeroPedia.release.xcconfig"; sourceTree = "<group>"; };
+		139FA21D9E6AF7CCB7ED8B63 /* Pods-SuperHeroPedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperHeroPedia.debug.xcconfig"; path = "Target Support Files/Pods-SuperHeroPedia/Pods-SuperHeroPedia.debug.xcconfig"; sourceTree = "<group>"; };
+		A74D642B724BD0AE4D912BB5 /* Pods_SuperHeroPedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperHeroPedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D65BF0E325EC34B300AFAAF2 /* AlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
 		D65BF0EA25EC382A00AFAAF2 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		D6EA927925E8044B000928D8 /* SuperHeroPedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperHeroPedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,17 +43,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				480F03B10C6E93BADF7D375A /* Pods_SuperHeroPedia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		956CD1C39AA31DAADC0928D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A74D642B724BD0AE4D912BB5 /* Pods_SuperHeroPedia.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D01A45CED53A931BBF1FB70A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				139FA21D9E6AF7CCB7ED8B63 /* Pods-SuperHeroPedia.debug.xcconfig */,
+				050D62E022C0B9844C9C98C4 /* Pods-SuperHeroPedia.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D6EA927025E8044B000928D8 = {
 			isa = PBXGroup;
 			children = (
 				D6EA927B25E8044B000928D8 /* SuperHeroPedia */,
 				D6EA927A25E8044B000928D8 /* Products */,
+				D01A45CED53A931BBF1FB70A /* Pods */,
+				956CD1C39AA31DAADC0928D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,9 +127,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D6EA928D25E80450000928D8 /* Build configuration list for PBXNativeTarget "SuperHeroPedia" */;
 			buildPhases = (
+				54C4663F020CC5AB465C3393 /* [CP] Check Pods Manifest.lock */,
 				D6EA927525E8044B000928D8 /* Sources */,
 				D6EA927625E8044B000928D8 /* Frameworks */,
 				D6EA927725E8044B000928D8 /* Resources */,
+				922B4ECA42FCC2C3AD0EF551 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,6 +188,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		54C4663F020CC5AB465C3393 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SuperHeroPedia-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		922B4ECA42FCC2C3AD0EF551 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SuperHeroPedia/Pods-SuperHeroPedia-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SuperHeroPedia/Pods-SuperHeroPedia-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SuperHeroPedia/Pods-SuperHeroPedia-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D6EA927525E8044B000928D8 /* Sources */ = {
@@ -314,6 +383,7 @@
 		};
 		D6EA928E25E80450000928D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 139FA21D9E6AF7CCB7ED8B63 /* Pods-SuperHeroPedia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -332,6 +402,7 @@
 		};
 		D6EA928F25E80450000928D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 050D62E022C0B9844C9C98C4 /* Pods-SuperHeroPedia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
