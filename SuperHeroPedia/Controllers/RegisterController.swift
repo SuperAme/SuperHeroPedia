@@ -6,8 +6,8 @@
 //  Copyright © 2021 Americo MQ. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import Firebase
 
 class RegisterController: UIViewController {
     
@@ -18,9 +18,19 @@ class RegisterController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerBtn.layer.cornerRadius = 10
+        passwordTextField.textContentType = .oneTimeCode
     }
     
     @IBAction func registerButton(_ sender: UIButton) {
+        if let email = emailTextField.text, let password = passwordTextField.text {
+            Auth.auth().createUser(withEmail: email, password: password) { (authresult, error) in
+                if let e = error {
+                    AlertView.instance.showAlert(title: "ERROR", message: e.localizedDescription, alertType: .failure)
+                } else {
+                    AlertView.instance.showAlert(title: "Successful Registration!", message: "You have been successfully registered", alertType: .success)
+                }
+            }
+        }
 //        AlertView.instance.showAlert(title: "Este es el titulo", message: "Hola Mundo", alertType: .failure)
     }
 }
