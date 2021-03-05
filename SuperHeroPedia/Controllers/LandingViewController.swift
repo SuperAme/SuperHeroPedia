@@ -10,10 +10,17 @@ import Foundation
 import UIKit
 import Firebase
 
-class LandingViewController: UITableViewController {
+class LandingViewController: UIViewController {
+    
+    var dict = ["hola","como","estas"]
+    
+    @IBOutlet weak var myTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
+        myTableView.dataSource = self
+        myTableView.delegate = self
     }
     
     @IBAction func logOutButton(_ sender: UIBarButtonItem) {
@@ -26,3 +33,20 @@ class LandingViewController: UITableViewController {
         }
     }
 }
+extension LandingViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(dict[indexPath.row])
+    }
+}
+extension LandingViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dict.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = myTableView.dequeueReusableCell(withIdentifier: "myCustomCell", for: indexPath)
+        cell.textLabel?.text = dict[indexPath.row]
+        return cell
+    }
+
+}
+
