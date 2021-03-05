@@ -8,5 +8,6 @@ target 'SuperHeroPedia' do
   # Pods for SuperHeroPedia
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'Alamofire'
 
 end
