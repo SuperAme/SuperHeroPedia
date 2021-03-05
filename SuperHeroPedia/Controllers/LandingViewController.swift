@@ -11,8 +11,18 @@ import UIKit
 import Firebase
 import Alamofire
 
-struct jsonStruct: Decodable {
+struct jsonStruct: Codable {
     let name: String
+    let images: imageStruct
+    let biography: Publisher
+}
+
+struct imageStruct: Codable {
+    let xs: String?
+}
+
+struct Publisher: Codable {
+    let publisher: String?
 }
 
 class LandingViewController: UIViewController {
@@ -74,7 +84,9 @@ extension LandingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = myTableView.dequeueReusableCell(withIdentifier: "myCustomCell", for: indexPath) as! SuperHeroDataTableViewCell
         cell.nameLbl.text = dict[indexPath.row].name
-        if let url = URL(string: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/xs/1-a-bomb.jpg") {
+        cell.publisherLbl.text = dict[indexPath.row].biography.publisher
+        
+        if let url = URL(string: dict[indexPath.row].images.xs ?? "") {
             if let data = try? Data(contentsOf: url) {
                 DispatchQueue.main.async {
                     cell.shImage.image = UIImage(data: data)
