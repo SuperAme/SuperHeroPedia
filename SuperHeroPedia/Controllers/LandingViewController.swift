@@ -11,26 +11,12 @@ import UIKit
 import Firebase
 import Alamofire
 
-struct jsonStruct: Codable {
-    let name: String
-    let images: imageStruct
-    let biography: Publisher
-}
-
-struct imageStruct: Codable {
-    let xs: String?
-}
-
-struct Publisher: Codable {
-    let publisher: String?
-}
-
 class LandingViewController: UIViewController {
     
-    var dict = [jsonStruct]()
-    var manager = SuperHeroesManager()
+    var dict = [SuperHeroData]()
     
     @IBOutlet weak var myTableView: UITableView!
+    @IBOutlet weak var mySearchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +24,6 @@ class LandingViewController: UIViewController {
         myTableView.dataSource = self
         myTableView.delegate = self
         getData()
-//        self.manager.performRequest()
     }
     
     @IBAction func logOutButton(_ sender: UIBarButtonItem) {
@@ -59,7 +44,7 @@ class LandingViewController: UIViewController {
     }
     func parseJSON(_ data: Data) {
         do {
-            dict = try JSONDecoder().decode([jsonStruct].self, from: data)
+            dict = try JSONDecoder().decode([SuperHeroData].self, from: data)
             for data in dict {
                 DispatchQueue.main.async {
                     self.myTableView.reloadData()
