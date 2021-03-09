@@ -59,6 +59,11 @@ class LandingViewController: UIViewController {
 }
 extension LandingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if mySearchBar.isFirstResponder {
+            mySearchBar.resignFirstResponder()
+            myTableView.deselectRow(at: indexPath, animated: false)
+            return
+        }
         print(dict[indexPath.row])
     }
 }
@@ -81,6 +86,4 @@ extension LandingViewController: UITableViewDataSource {
         
         return cell
     }
-
 }
-
