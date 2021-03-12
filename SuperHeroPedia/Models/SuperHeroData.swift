@@ -10,14 +10,18 @@ import Foundation
 
 struct SuperHeroData: Codable {
     let name: String?
+    let slug: String?
     let images: imageStruct
     let biography: Publisher
 }
 
 struct imageStruct: Codable {
     let xs: String?
+    let md: String?
 }
 
 struct Publisher: Codable {
+    let fullName: String?
     let publisher: String?
+    let alignment: String?
 }

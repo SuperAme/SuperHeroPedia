@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		480F03B10C6E93BADF7D375A /* Pods_SuperHeroPedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A74D642B724BD0AE4D912BB5 /* Pods_SuperHeroPedia.framework */; };
+		D653772C25FAFE26007D2738 /* SuperHeroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D653772B25FAFE26007D2738 /* SuperHeroManager.swift */; };
 		D65BF0E425EC34B300AFAAF2 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D65BF0E325EC34B300AFAAF2 /* AlertView.xib */; };
 		D65BF0EB25EC382A00AFAAF2 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65BF0EA25EC382A00AFAAF2 /* AlertView.swift */; };
+		D6712B3F25F7157E00FDD69E /* SuperHeroCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6712B3E25F7157D00FDD69E /* SuperHeroCardViewController.swift */; };
 		D6A43CFD25EDA88800759754 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6A43CFC25EDA88800759754 /* GoogleService-Info.plist */; };
 		D6A43D0125EDCCB300759754 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A43D0025EDCCB300759754 /* Constants.swift */; };
 		D6A43DEF25F1CD7400759754 /* SuperHeroData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A43DEE25F1CD7400759754 /* SuperHeroData.swift */; };
@@ -28,8 +30,10 @@
 		050D62E022C0B9844C9C98C4 /* Pods-SuperHeroPedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperHeroPedia.release.xcconfig"; path = "Target Support Files/Pods-SuperHeroPedia/Pods-SuperHeroPedia.release.xcconfig"; sourceTree = "<group>"; };
 		139FA21D9E6AF7CCB7ED8B63 /* Pods-SuperHeroPedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperHeroPedia.debug.xcconfig"; path = "Target Support Files/Pods-SuperHeroPedia/Pods-SuperHeroPedia.debug.xcconfig"; sourceTree = "<group>"; };
 		A74D642B724BD0AE4D912BB5 /* Pods_SuperHeroPedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperHeroPedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D653772B25FAFE26007D2738 /* SuperHeroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroManager.swift; sourceTree = "<group>"; };
 		D65BF0E325EC34B300AFAAF2 /* AlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
 		D65BF0EA25EC382A00AFAAF2 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		D6712B3E25F7157D00FDD69E /* SuperHeroCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroCardViewController.swift; sourceTree = "<group>"; };
 		D6A43CFC25EDA88800759754 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D6A43D0025EDCCB300759754 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D6A43DEE25F1CD7400759754 /* SuperHeroData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroData.swift; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 			children = (
 				D6A43D0025EDCCB300759754 /* Constants.swift */,
 				D6A43DEE25F1CD7400759754 /* SuperHeroData.swift */,
+				D653772B25FAFE26007D2738 /* SuperHeroManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 				D6EA928025E8044B000928D8 /* LoginViewController.swift */,
 				D6EA929125E81FB6000928D8 /* LandingViewController.swift */,
 				D6EA929425E85FE1000928D8 /* RegisterController.swift */,
+				D6712B3E25F7157D00FDD69E /* SuperHeroCardViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -256,12 +262,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6712B3F25F7157E00FDD69E /* SuperHeroCardViewController.swift in Sources */,
 				D6EA929525E85FE1000928D8 /* RegisterController.swift in Sources */,
 				D6EA928125E8044B000928D8 /* LoginViewController.swift in Sources */,
 				D6A43E0A25F2A55000759754 /* SuperHeroDataTableViewCell.swift in Sources */,
 				D6EA927D25E8044B000928D8 /* AppDelegate.swift in Sources */,
 				D6A43DEF25F1CD7400759754 /* SuperHeroData.swift in Sources */,
 				D6EA929225E81FB6000928D8 /* LandingViewController.swift in Sources */,
+				D653772C25FAFE26007D2738 /* SuperHeroManager.swift in Sources */,
 				D6A43D0125EDCCB300759754 /* Constants.swift in Sources */,
 				D6EA927F25E8044B000928D8 /* SceneDelegate.swift in Sources */,
 				D65BF0EB25EC382A00AFAAF2 /* AlertView.swift in Sources */,
